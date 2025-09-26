@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2595882206879992197}
   - component: {fileID: 4955150894848240562}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: (Gammel) Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
