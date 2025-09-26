@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -66,6 +67,7 @@ public class Player : MonoBehaviour
     Rigidbody2D rb;
     NoiseMaker nm;
     SpriteRenderer sr;
+    GameController gc;
 
 
     private void Awake()
@@ -73,6 +75,8 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         nm = GetComponent<NoiseMaker>();
         sr = GetComponent<SpriteRenderer>();
+        gc = FindObjectOfType<GameController>();
+
     }
 
 
@@ -80,6 +84,10 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
+
+
         Speed = WalkSpeed;
 
         UpdateMaxSliderValues();
@@ -294,7 +302,10 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Player died");
+        Invincible = true;
+
+        gc.GameOver();
+        gameObject.SetActive(false);
     }
 
 

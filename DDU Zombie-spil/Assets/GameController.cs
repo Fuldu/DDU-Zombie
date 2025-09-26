@@ -13,12 +13,25 @@ public class GameController : MonoBehaviour
 
     public List<GameObject> LevelPrefabs;
 
+
+
+    [Header("UI")]
+
+    public GameObject GameOverScreen;
+
+
     // Start is called before the first frame update
     void Start()
     {
         MakeNewLevel();
     }
 
+
+
+    public void GameOver()
+    {
+        GameOverScreen.SetActive(true);
+    }
 
 
     public void CompleteLevel()
