@@ -53,11 +53,25 @@ public class Player : MonoBehaviour
 
 
     [Header("Misc")]
+    public AudioInstantiater AI;
     public CircleCollider2D PlayerNoiseCollider;
 
     [Header("UI")]
     public Slider HealthBar;
     public Slider StaminaBar;
+
+
+    [Header("Audio Config")]
+    public float TimeBetweenWalkingFootSteps;
+    public float TimeBetweenWalkingRunningSteps;
+    
+
+    [Header("Audio")]
+    public AudioClip ShootAudio;
+    public AudioClip WalkAudio;
+    public AudioClip RunAudio;
+    public AudioClip HealAudio;
+    public AudioClip HurtAudio;
 
 
     private float Speed;
@@ -68,6 +82,7 @@ public class Player : MonoBehaviour
     NoiseMaker nm;
     SpriteRenderer sr;
     GameController gc;
+    Animator anim;
 
 
     private void Awake()
@@ -76,7 +91,7 @@ public class Player : MonoBehaviour
         nm = GetComponent<NoiseMaker>();
         sr = GetComponent<SpriteRenderer>();
         gc = FindObjectOfType<GameController>();
-
+        anim = GetComponent<Animator>();   
     }
 
 
@@ -99,6 +114,10 @@ public class Player : MonoBehaviour
     private void Shoot()
     {
 
+
+
+        anim.SetTrigger("Shoot");
+        AI.InstantiateAudio(ShootAudio, transform.position);
 
         GameObject newProj = Instantiate(ProjectileObj, ShootPos.transform.position, Quaternion.identity);
 
@@ -166,10 +185,6 @@ public class Player : MonoBehaviour
         {
             PlayerNoiseCollider.radius = 0;
         }
-        {
-
-        }
-
 
 
 
