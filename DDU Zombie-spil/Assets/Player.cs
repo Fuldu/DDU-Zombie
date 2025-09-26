@@ -62,14 +62,17 @@ public class Player : MonoBehaviour
 
 
     [Header("Audio Config")]
-    public float TimeBetweenWalkingFootSteps;
-    public float TimeBetweenWalkingRunningSteps;
-    
+    public float TimeBetweenWalkingSteps;
+    public float TimeBetweenRunningSteps;
+
 
     [Header("Audio")]
+    private float FootStepTimer;
     public AudioClip ShootAudio;
-    public AudioClip WalkAudio;
-    public AudioClip RunAudio;
+    public int WalkAudioIndex;
+    public List<AudioClip> WalkAudio;
+    public int RunAudioIndex;
+    public List<AudioClip> RunAudio;
     public AudioClip HealAudio;
     public AudioClip HurtAudio;
 
@@ -239,9 +242,53 @@ public class Player : MonoBehaviour
 
 
 
-        if (ActiveState == PlayerStates.Running) { Speed = RunSpeed; }
-        else if (ActiveState == PlayerStates.Crouching) { Speed = CrouchSpeed; }
-        else { Speed = WalkSpeed; }
+        if (ActiveState == PlayerStates.Running)
+        { 
+            Speed = RunSpeed;
+
+
+            if (FootStepTimer <= 0)
+            {
+                if (RunAudioIndex + 1 >= RunAudio.Count)
+                {
+                    RunAudioIndex = 0;
+                }
+
+                AI.InstantiateAudio(RunAudio[RunAudioIndex], transform.position);
+                FootStepTimer = TimeBetweenRunningSteps;
+            }
+            else
+            {
+                FootStepTimer--;
+            }
+        }
+        else if (ActiveState == PlayerStates.Crouching)
+        {
+            Speed = CrouchSpeed;
+        }
+        else
+        { 
+            Speed = WalkSpeed;
+        }
+
+
+        if (ActiveState == PlayerStates.Walking)
+        {
+            if (FootStepTimer <= 0)
+            {
+                if (WalkAudioIndex + 1 >= WalkAudio.Count)
+                {
+                    WalkAudioIndex = 0;
+                }
+
+                AI.InstantiateAudio(WalkAudio[WalkAudioIndex], transform.position);
+                FootStepTimer = TimeBetweenWalkingSteps;
+            }
+            else
+            {
+                FootStepTimer--;
+            }
+        }
 
 
         rb.velocity = movementVector * Speed;

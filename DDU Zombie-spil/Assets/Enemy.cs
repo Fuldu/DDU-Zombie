@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Misc")]
     public LayerMask visionMask;
-
+    public GameObject HitVFX;
 
     private GameObject Player;
 
@@ -227,8 +227,16 @@ public class Enemy : MonoBehaviour
     }
 
 
-    public void TakeDamage(int dmg)
+    public void TakeDamage(int dmg, Vector2 colPos)
     {
+        GameObject newVFX = Instantiate(HitVFX, transform.position, Quaternion.identity);
+
+        Vector2 dir = new Vector2(colPos.x - transform.position.x, colPos.y - transform.position.y).normalized;
+
+        newVFX.transform.up = dir;
+
+
+
         if (Health - dmg <= 0)
         {
             Die();

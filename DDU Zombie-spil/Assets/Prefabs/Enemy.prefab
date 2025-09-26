@@ -210,6 +210,7 @@ MonoBehaviour:
   visionMask:
     serializedVersion: 2
     m_Bits: 72
+  HitVFX: {fileID: 8621839351712957256, guid: 9fa2e5ac0584dc64abda1ad204e03055, type: 3}
 --- !u!58 &2543098633687784700
 CircleCollider2D:
   m_ObjectHideFlags: 0

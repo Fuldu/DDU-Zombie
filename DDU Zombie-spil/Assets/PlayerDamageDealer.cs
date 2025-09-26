@@ -14,7 +14,7 @@ public class PlayerDamageDealer : MonoBehaviour
     {
         if (collision.GetComponent<Enemy>())
         {
-            collision.GetComponent<Enemy>().TakeDamage(Damage);
+            collision.GetComponent<Enemy>().TakeDamage(Damage, transform.position);
             if (DestroyOnHit) { Destroy(gameObject); }
         }
     }
