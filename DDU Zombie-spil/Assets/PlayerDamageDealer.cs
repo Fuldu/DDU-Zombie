@@ -17,6 +17,10 @@ public class PlayerDamageDealer : MonoBehaviour
             collision.GetComponent<Enemy>().TakeDamage(Damage, transform.position);
             if (DestroyOnHit) { Destroy(gameObject); }
         }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            if (DestroyOnHit) { Destroy(gameObject); }
+        }
     }
 
 

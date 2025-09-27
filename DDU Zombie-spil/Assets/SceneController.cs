@@ -12,6 +12,9 @@ public class SceneController : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("StartScreen");
+    }
 
 }

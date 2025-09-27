@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
-  DestroyOnHit: 0
+  DestroyOnHit: 1
 --- !u!114 &7425712003775097768
 MonoBehaviour:
   m_ObjectHideFlags: 0
