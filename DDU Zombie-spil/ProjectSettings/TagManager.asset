@@ -51,3 +51,6 @@ TagManager:
   - name: Front
     uniqueID: 2850117841
     locked: 0
+  - name: Zombie
+    uniqueID: 2110328523
+    locked: 0
