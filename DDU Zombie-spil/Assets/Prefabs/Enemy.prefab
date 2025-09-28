@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9113e6537fb834f80a9bcfba9c4929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 50
   ActiveState: 0
   PatrolPos: {x: 0, y: 0}
   SeesPlayer: 0
