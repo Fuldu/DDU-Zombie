@@ -128,7 +128,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332212999428871379}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -138,7 +138,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 2a22735be37942d428fd6a83783ab172, type: 2}
@@ -171,7 +171,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 1
+  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &3930677814650986166
 MonoBehaviour:
@@ -191,9 +191,9 @@ MonoBehaviour:
   SeesPlayer: 0
   UnfocusTimer: 0
   StartPatrolTimer: 0
-  ChaseSpeed: 5.5
-  defUnfocusTime: 200
-  DefaultVisionRange: 5
+  ChaseSpeed: 4.5
+  defUnfocusTime: 150
+  DefaultVisionRange: 3.25
   ChaseVisionRange: 10
   PatrolSpeed: 2
   MinDistToNewPatrolPoint: 2
@@ -204,8 +204,8 @@ MonoBehaviour:
   patrolPointTestingMask:
     serializedVersion: 2
     m_Bits: 64
-  GoldDropPre: {fileID: 0}
-  ChanceToDrop: 0
+  GoldDropPre: {fileID: 5591285048744906461, guid: 079379911cf06ad4d8675d0023b2f84e, type: 3}
+  ChanceToDrop: 10
   DropVelocity: 0
   visionMask:
     serializedVersion: 2
@@ -289,7 +289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6736830831084332678
 Transform:
   m_ObjectHideFlags: 0
@@ -373,7 +373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4825752029057357811
 Transform:
   m_ObjectHideFlags: 0

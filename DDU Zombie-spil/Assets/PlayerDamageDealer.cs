@@ -19,9 +19,11 @@ public class PlayerDamageDealer : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Wall"))
         {
-            if (DestroyOnHit) { Destroy(gameObject); }
+            Destroy(gameObject);
         }
     }
+
+    
 
 
 

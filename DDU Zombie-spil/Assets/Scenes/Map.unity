@@ -960,6 +960,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4039851798081242250, guid: e0d03c83ae6e88344a0a9450e88e1fce, type: 3}
+      propertyPath: m_GeometryType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4039851798081242250, guid: e0d03c83ae6e88344a0a9450e88e1fce, type: 3}
+      propertyPath: m_UseDelaunayMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4503781138770926680, guid: e0d03c83ae6e88344a0a9450e88e1fce, type: 3}
       propertyPath: m_Name
       value: Map
