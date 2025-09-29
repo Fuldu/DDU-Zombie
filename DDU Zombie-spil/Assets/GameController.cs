@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     [Header("UI")]
 
     public GameObject GameOverScreen;
+    public GameObject PlayerWonScreen;
 
 
     // Start is called before the first frame update
@@ -73,6 +74,7 @@ public class GameController : MonoBehaviour
 
     private void WinGame()
     {
+        PlayerWonScreen.SetActive(true );
         Debug.Log("Spiller vandt");
     }
 

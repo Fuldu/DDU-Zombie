@@ -205,7 +205,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   GoldDropPre: {fileID: 5591285048744906461, guid: 079379911cf06ad4d8675d0023b2f84e, type: 3}
-  ChanceToDrop: 10
+  ChanceToDrop: 30
   DropVelocity: 0
   visionMask:
     serializedVersion: 2
@@ -243,9 +243,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.14}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.43
 --- !u!50 &1402422497322613090
 Rigidbody2D:
   serializedVersion: 4

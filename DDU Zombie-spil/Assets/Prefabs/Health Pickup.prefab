@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1915119530930056810}
   - component: {fileID: 255274273486966355}
-  - component: {fileID: 7175288612574810140}
   - component: {fileID: 5001157820136730211}
+  - component: {fileID: 8616506467464287821}
   m_Layer: 8
   m_Name: Health Pickup
   m_TagString: Untagged
@@ -41,7 +41,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5591285048744906461}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 1196713477
   m_SortingLayer: -1
   m_SortingOrder: 1
-  m_Sprite: {fileID: -2413806693520163455, guid: 6ad739100feab124d94410e6e81aeabf, type: 3}
-  m_Color: {r: 0.11803484, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1dc869e40b69aeb4ebfbb510c3605ce1, type: 3}
+  m_Color: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,8 +86,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &7175288612574810140
-CircleCollider2D:
+--- !u!114 &5001157820136730211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5591285048744906461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71464a2b522d5a4d85c8db1de8f837e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GivingHealth: 50
+--- !u!70 &8616506467464287821
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -119,18 +132,5 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &5001157820136730211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5591285048744906461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e71464a2b522d5a4d85c8db1de8f837e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GivingHealth: 50
+  m_Size: {x: 0.91, y: 2.1333334}
+  m_Direction: 0

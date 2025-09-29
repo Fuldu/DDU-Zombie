@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
     [Header("Misc")]
     public AudioInstantiater AI;
     public CircleCollider2D PlayerNoiseCollider;
+    public int PlayerHurtHealthBorder;
 
     [Header("UI")]
     public Slider HealthBar;
@@ -77,6 +78,7 @@ public class Player : MonoBehaviour
     public AudioClip HurtAudio;
 
 
+
     private float Speed;
 
     private Vector2 mouseDir;
@@ -86,7 +88,8 @@ public class Player : MonoBehaviour
     SpriteRenderer sr;
     GameController gc;
     Animator anim;
-
+    Animator volumeAnim;
+    VolumeScript volume;
 
     private void Awake()
     {
@@ -94,7 +97,9 @@ public class Player : MonoBehaviour
         nm = GetComponent<NoiseMaker>();
         sr = GetComponent<SpriteRenderer>();
         gc = FindObjectOfType<GameController>();
-        anim = GetComponent<Animator>();   
+        anim = GetComponent<Animator>();
+        volumeAnim = FindObjectOfType<VolumeScript>().gameObject.GetComponent<Animator>();
+        volume = FindObjectOfType<VolumeScript>();
     }
 
 
@@ -199,7 +204,7 @@ public class Player : MonoBehaviour
         // Update UI
 
 
-        HealthBar.value = Health;
+        
         StaminaBar.value = Stamina;
 
 
@@ -347,8 +352,29 @@ public class Player : MonoBehaviour
 
 
 
+    private void HealthUpdated()
+    {
+        HealthBar.value = Health;
+
+
+        if (Health <= PlayerHurtHealthBorder)
+        {
+            volumeAnim.SetBool("Player Hurt", true);
+            volume.playerHurt = true;
+        }
+        else
+        {
+            volumeAnim.SetBool("Player Hurt", false);
+            volume.playerHurt = false;
+        }
+    }
+
+
     public void GainHealth(int health)
     {
+
+        AI.InstantiateAudio(HealAudio, transform.position);
+
         if (Health + health >= MaxHealth)
         {
             Health = MaxHealth;
@@ -357,6 +383,7 @@ public class Player : MonoBehaviour
         {
             Health += health;
         }
+        HealthUpdated();
     }
 
 
@@ -386,6 +413,8 @@ public class Player : MonoBehaviour
 
             StartCoroutine(IFrames());
         }
+        HealthUpdated();
+
     }
 
 
